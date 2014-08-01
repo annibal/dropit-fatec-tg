@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <title>TG de formas</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.js"></script>
+        <script type="text/javascript">
+            $(function() {
+                $('#logo div').draggable();
+            });
+        </script>
+        <style type="text/css">
+            body {
+                background-color: #c2cfff;
+                text-align: center;
+            }
+            
+            
+            body {
+                text-align: center;
+            }
+            #dropit {
+                margin-bottom:3em;
+            }
+            #text {
+                font-family: sans-serif;
+                font-size: 8em;
+                font-weight: bold;
+                margin-left:-10%;
+                color:#FFF;
+                /* POG para fazer aa sombra do texto ficar sólida */
+                text-shadow: 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000,
+                             0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000,
+                             0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000,
+                             0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000,
+                             0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000,
+                             0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000,
+                             0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000,
+                             0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000,
+                             0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000,
+                             0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000,
+                             0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000, 0px 0px 7px #000,
+                             0px 0px 7px #000;
+                letter-spacing: 7px;
+                display:inline-block;
+            }
+            
+            /* pseudo objeto exibido em cima do "Dropit" branco que funciona com a animação de máscara */
+            #text:after {
+                content:'Dropit';
+                width: 0px;
+                overflow: visible;
+                position:relative;
+                display:inline-block;
+                left:-3.27em;
+                color:rgba(200,220,255,1);
+                /* cross-browser: opera, safari e chrome vão pegar o -webkit, mozilla pega o -moz, espero q IE pegue o sem nada */
+                clip-path: polygon(-150px 0px, -100px 200px, -140px 200px, 0px 0px); /* um retangulo magro meio inclinado pra direita */
+                clip-path: polygon(-150px 0px, -100px 200px, -140px 200px, 0px 0px);
+                -webkit-clip-path: polygon(-150px 0px, -100px 200px, -140px 200px, 0px 0px);
+                -webkit-animation: blink 6s linear 1s infinite; /* name | duration | timing-function | delay | repeat | direction (normal) */
+                -moz-clip-path: polygon(-150px 0px, -100px 200px, -140px 200px, 0px 0px);
+                -moz-animation: blink 6s linear 1s infinite;
+            }
+            /* css rule que define a animação: faz o retangulo magro ir da extrema esquerda até 800px para a direita */
+            @keyframes blink {
+                0% {
+                    clip-path: polygon(-50px 0px, -100px 600px, -60px 600px, 0px 0px);
+                    -webkit-clip-path: polygon(-50px 0px, -100px 600px, -60px 600px, 0px 0px);
+                    -moz-clip-path: polygon(-50px 0px, -100px 600px, -60px 600px, 0px 0px);
+                }
+                100% {
+                    clip-path: polygon(750px 0px, 700px 600px, 760px 600px, 800px 0px);
+                    -webkit-clip-path: polygon(750px 0px, 700px 600px, 760px 600px, 800px 0px);
+                    -moz-clip-path: polygon(750px 0px, 700px 600px, 760px 600px, 800px 0px);
+                }
+            }
+            @-webkit-keyframes blink {
+                0% {-webkit-clip-path: polygon(-50px 0px, -100px 600px, -60px 600px, 0px 0px); }
+                100% {-webkit-clip-path: polygon(750px 0px, 700px 600px, 760px 600px, 800px 0px); }
+            }
+            @-moz-keyframes blink {
+                0% {-moz-clip-path: polygon(-50px 0px, -100px 600px, -60px 600px, 0px 0px); }
+                100% {-moz-clip-path: polygon(750px 0px, 700px 600px, 760px 600px, 800px 0px); }
+            }
+            
+            /* div que contém as forminhas */
+            #logo {
+                display:inline-block;
+                padding: 3px;
+                position: absolute;
+                padding-top:1em;
+                padding-left:1em;
+            }
+            /* para todas as forminhas */
+            #logo div {
+                position: relative;
+            }
+            #square {
+                border:3px solid #000;
+                width:5em; height: 5em;
+                background-color: blue;
+                z-index: 3;
+                top:-2.5em;
+                left:2.5em;
+            }
+            #circle {
+                border:3px solid #000;
+                width:5em; height: 5em;
+                background-color: red;
+                z-index: 2;
+                border-radius: 90em;
+                top:-10em;
+                left:5em;
+            }
+            #triangle { /* fundo preto do triangulo */
+                background-color: transparent;
+                width: 0px; height: 0px;
+                border-bottom: 4.6em solid black;
+                border-left: 2.35em solid transparent;
+                border-right: 2.35em solid transparent;
+                z-index: 1;
+            }
+            #triangle:before { /* parte amarela do triangulo */
+                content: '';
+                left:-2em;
+                top: 0.4em;
+                display: block;
+                position: relative;
+                background-color: transparent;
+                width: 0px; height: 0px;
+                border-bottom: 4em solid yellow;
+                border-left: 2em solid transparent;
+                border-right: 2em solid transparent;
+                z-index: 1;
+            }
+            
+            
+             a {
+                text-decoration: none;
+                color:#FFF;
+                text-shadow: 0px 1px 1px rgba(255,255,255,0.6), 0px -1px 1px rgba(0,0,0,0.6);
+                padding:20px 40px;
+                font-family: sans-serif;
+                font-weight: bold;
+                font-size: 16pt;
+                color:rgba(255,230,230,1);
+                border-radius: 15px;
+                border:3px solid rgba(255,255,255,0.5);
+                box-shadow:       0px 0px 10px #FAA,
+                            inset 0px -5px 15px rgba(0,0,0,0.2),
+                            inset 0px 5px 15px rgba(255,255,255,0.3);
+                background-color: #FAA;
+                display: inline-block;
+                margin:10px;
+            }
+            a:hover { /* mouse em cima */
+                box-shadow:       0px 0px 10px #FAA,
+                            inset 0px -5px 10px rgba(0,0,0,0.3),
+                            inset 0px 5px 10px rgba(255,255,255,0.4);
+            }
+            a:active { /* clique */
+                box-shadow:       0px 0px 10px #FAA,
+                            inset 0px 5px 15px rgba(0,0,0,0.2),
+                            inset 0px -5px 15px rgba(255,255,255,0.3);
+            }
+        </style>
+    </head>
+    <body>
+        <div id="dropit">
+            <div id="text" title="As formas podem ser arrastadas!">Dropit</div>
+            <div id="logo">
+                <div class="ui-draggable" id="triangle"></div>
+                <div class="ui-draggable" id="square"></div>
+                <div class="ui-draggable" id="circle"></div>
+            </div>
+        </div>
+        <a href="phases.html">Jogar!</a><br>
+    
+
+</body></html>
