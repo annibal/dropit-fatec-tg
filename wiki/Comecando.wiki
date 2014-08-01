@@ -1,0 +1,34 @@
+#summary Informações de como iniciar no projeto
+
+= SVN =
+
+O Subversion é uma ferramenta de versionamento de projetos.
+Serve para enviar, baixar e reverter arquivos de um projeto.
+Além de organizar, ser portável para qualquer máquina, aparecer bonito aqui na web, permite retroceder caso alguém envie algo errado.
+
+Como?
+bom, tem uma pasta num servidor, neste caso ele está no Google. a gente basicamente copia as coisas de lá, mexe e manda de volta. Cada vez que mandamos de volta, é salva uma nova cópia.
+
+= Instalando =
+
+Simples, vá até [http://tortoisesvn.net/downloads.html O Site do TortoiseSVN] e baixe o programa, instale e tal.
+
+Perceba agora que no menu de contexto (Botão Direito numa pasta), exitem 2 opções: *SVN Checkout..* e *TortoiseSVN*. Pronto!
+
+= WTF is dis? =
+
+*Checkout* - o ato de transformar uma simples pasta em uma pasta que sabe aonde o servidor está, seu usuário no servidor, e permite as ações do SVN.
+*Update* - uma vez feito o Checkout, a pasta pode ser Atualizada para sincronizar as alterações com o servidor. deve ser feito toda vez antes de um
+*Commit* - a ação de enviar suas alterações bugadas para o servidor.
+
+Avançado:
+*Show Log* - exibe o log de commits para um arquivo ou pasta, por data, usuário, arquivos, alterações e o carai^4.
+*Revert* - reverte um arquivo para a versão atual. é um Update forçado.
+*Revision* - não é uma ação, mas sim o número de commits realizados desde ever.
+*HEAD revision* - a 1ª revisão
+*Diff* - mostra o que já foi alterado, comparando suas alterações com a atual no servidor
+
+= Fazendo Checkout =
+
+1. Após instalar felizmente o SVN, escolha um cantinho aconchegante do seu pc, de preferência longe de toda a bagunça e crie uma pasta chamada "Dropit".
+2. Abra o Prompt de comando (é possivel fazer sem ele, mas o repositorio do google necessita disso), e digite os comandos 
