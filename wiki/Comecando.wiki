@@ -31,11 +31,9 @@ Avançado:
   **Diff* - mostra o que já foi alterado, comparando suas alterações com a atual no servidor
 
 = Fazendo Checkout =
-   
-  1. Após instalar felizmente o SVN, escolha um cantinho aconchegante do seu pc, de preferência longe de toda a bagunça e crie uma pasta chamada "Dropit".
-  2. Abra o Prompt de comando (é possivel fazer sem ele, mas o repositório do google necessita disso), e digite os comandos `svn checkout https://dropit-fatec-tg.googlecode.com/svn/trunk/ --username` *SEU EMAIL @GMAIL* `caminho\para\a\pasta\Dropit`.
-
-  3. Quando for fazer commit/update, vai pedir um usuário e senha. usuário é seu email do google, igual o inserido no prompt, e senha me peçam =D
+  #Após instalar felizmente o SVN, escolha um cantinho aconchegante do seu pc, de preferência longe de toda a bagunça e crie uma pasta chamada "Dropit".
+  #Abra o Prompt de comando (é possivel fazer sem ele, mas o repositório do google necessita disso), e digite os comandos `svn checkout https://dropit-fatec-tg.googlecode.com/svn/trunk/ --username` *SEU EMAIL @GMAIL* `caminho\para\a\pasta\Dropit`.
+  #Quando for fazer commit/update, vai pedir um usuário e senha. usuário é seu email do google, igual o inserido no prompt, e senha me peçam =D
 
 ----
 
