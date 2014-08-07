@@ -1,0 +1,15 @@
+
+body {
+    background-color: #c1a367;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color:#FFF;
+    background-color: #553321;
+    
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
