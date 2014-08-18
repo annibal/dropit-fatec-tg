@@ -8,7 +8,7 @@ html {
     height:94%;
     position: absolute;
     text-align: center;
-    background: #c2cfff;
+    background: #c1a367;
 }
 body {
     width:70%;
@@ -25,12 +25,12 @@ header {
     display: block;
     text-align: center;
     padding:0px 5px;
-    border-bottom:2px solid #BBB;
+    border-bottom:2px solid #553321;
     z-index: 215;
     position: relative;
 }
 #model {
-    border:2px solid #BBB;
+    border:2px solid #553321;
     width: 100px;
     height: 100px;
     position: relative;
@@ -52,7 +52,7 @@ header {
     height: 150px;
     line-height: 140px;
     text-align:center;
-    background-color:#6797c3;
+    background-color:#553321;
     z-index: 2;
 }
 
@@ -61,11 +61,30 @@ header {
     width:50px;
     height:50px;
     margin:10px;
-    position: absolute;
     
     background-size: contain;
     background-repeat: no-repeat;
 }
 #shapeContainer .shape:hover {
     -webkit-transform: scale(1.2);
+}
+
+
+body div#shapeHolders {
+    background: #FFFFFF;
+    width:533px;
+    height:400px;
+    min-width: 256px;
+    min-height: 256px;
+    margin: 15px;
+    border:1px solid #553321;
+    margin-right: auto;
+    margin-bottom: none;
+}
+#shapeHolders .shape {
+    position:absolute;
+}
+#shapeHolders .highlight-grab {
+}
+#shapeHolders .highlight-hover {
 }
