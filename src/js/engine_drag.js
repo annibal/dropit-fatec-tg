@@ -2,9 +2,10 @@
 
 var shapes = {
     'circle' : {
-        'count' : 4,
-        'width' : 128,
-        'height' : 128
+        'count' : 4
+    },
+    'triangle' : {
+        'count' : 6
     }
 }
 
@@ -24,7 +25,7 @@ function deployBaseModels(models) {
                 okDeploy = false; // then fuck
             }
         });
-        if (okDeploy) { // if none of the deployed matches this shape
+        if (okDeploy) { // if none of the deployed matches this shape (no fucks)
             deployed.push(v); // add it to the deployeds
             $('<div/>').attr('class',((v.indexOf('shape') == -1)?'shape ':'')+v).appendTo($('#shapeContainer')); // "deploy" it (adds 'shape' class if hasn't)
         }
@@ -32,10 +33,18 @@ function deployBaseModels(models) {
     return deployed;
 }
 
+/**
+ * Checks via jQuery UI's "ui-droppable" class if there is any open hole and claims victory.
+ * @returns boolean if win
+ */
+function checkVictory() {
+    return ($('.ui-droppable').length == 0)
+}
+
 $(function() {
 
     var shapeModels = [];
-    $('#shapeHolders').children().each(function(i,v) {
+    $('#shapeHolders').children('.shape').each(function(i,v) {
         shapeModels.push($(v).attr('class'))
     });
     var baseShapes = deployBaseModels(shapeModels);
@@ -62,18 +71,18 @@ $(function() {
         });
         
         // sets the chosen image for each shape on stage
-        $('#shapeHolder .'+val).each(function() {
+        $('#shapeHolders .'+val).each(function() {
             $(this).css({'background-image':'url("../img/holders/'+shapeName+'_placeholder.png")'});
-            console.log('url("../img/holders/'+shapeName+'_placeholder.png")');
+            //console.log('url("../img/holders/'+shapeName+'_placeholder.png")');
         });
     });
 
-    $('#shapeContainer').children().each(function() {
+    $('#shapeContainer').children('.shape').each(function() {
         var className = '.'+$(this).attr('class').replace(' ui-draggable','').replace(new RegExp(' ','g'),'.');
         if ($(this).attr('class').indexOf('shape') != -1) {
             $(this).draggable({
                 revert: "invalid",
-                helper:"clone",
+                helper: "clone",
                 start:function() {
 
                 },
@@ -85,12 +94,34 @@ $(function() {
                 $(this).droppable({
                     greedy: true,
                     accept:className,
-                    activeClass: "activeFeedbackClass",
-                    hoverClass: "hoverFeedbackClass",
+                    activeClass: "highlight-grab",
+                    hoverClass: "highlight-hover",
+                    tolerance: "intersect",
                     drop:function(e,ui) {
-                        var me = $(e.target);
-                        me.attr('class', me.attr('class') + ' cheese');
-                        console.log(className);
+                        var shapeName = $(ui.helper).css('background-image');
+                        $(e.target).css({'background-image':shapeName});
+                        window.setTimeout(function(droppableObject, backgroundImage) {
+                            droppableObject.css({'background-image':backgroundImage});
+                        }, 50, $(e.target), shapeName);
+                        $(e.target).droppable("destroy");
+                        
+                        if (checkVictory()) alert("Ganhou!");
+                    },
+                    over:function(e,ui) {
+                        var shapeName = className.substr('.shape.'.length);
+                        $(e.target).css({'background-image':'url("../img/holders/'+shapeName+'_highlight_hover.png")'});
+                    },
+                    activate:function(e,ui) {
+                        var shapeName = className.substr('.shape.'.length);
+                        $(e.target).css({'background-image':'url("../img/holders/'+shapeName+'_highlight_grab.png")'});
+                    },
+                    out:function(e,ui) {
+                        var shapeName = className.substr('.shape.'.length);
+                        $(e.target).css({'background-image':'url("../img/holders/'+shapeName+'_placeholder.png")'});
+                    },
+                    deactivate:function(e,ui) {
+                        var shapeName = className.substr('.shape.'.length);
+                        $(e.target).css({'background-image':'url("../img/holders/'+shapeName+'_placeholder.png")'});
                     }
                 });
             });
