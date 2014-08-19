@@ -6,7 +6,13 @@ var shapes = {
     },
     'triangle' : {
         'count' : 6
-    }
+    },
+	'pilhaUp' : {
+		'count' : 1
+	},
+	'pilhaDown' : {
+		'count' : 1
+	}
 }
 
 /**
@@ -42,6 +48,11 @@ function checkVictory() {
 }
 
 $(function() {
+
+    $('#shapeHolders').children('.graph').each(function(i,v) {
+		var graphClass = $(this).attr('class').replace(' ui-draggable','').replace(new RegExp(' ','g'),'.').substr('.graph'.length);
+		$(this).css({'background-image' : 'url("../img/graphics/'+graphClass+'.png")'});
+	});
 
     var shapeModels = [];
     $('#shapeHolders').children('.shape').each(function(i,v) {
@@ -105,7 +116,9 @@ $(function() {
                         }, 50, $(e.target), shapeName);
                         $(e.target).droppable("destroy");
                         
-                        if (checkVictory()) alert("Ganhou!");
+                        window.setTimeout(function() {
+							if (checkVictory()) alert("Ganhou!");
+						}, 100);
                     },
                     over:function(e,ui) {
                         var shapeName = className.substr('.shape.'.length);
