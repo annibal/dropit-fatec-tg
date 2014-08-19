@@ -16,6 +16,7 @@ body {
     padding:5px;
     background: #FFF;
     z-index: 1114;
+    border-radius: 15px;
 }
 header {
     width:90%; height:75px;
