@@ -18,7 +18,7 @@ var shapes = {
 /**
  * Deploys Models removind duplicates. <br/>
  * Also returns array with the deployed.
-*/
+ */
 function deployBaseModels(models) {
     // TODO: shuffle order of appending
     var deployed = []
@@ -55,8 +55,8 @@ $(function() {
 	});
 
     var shapeModels = [];
-    $('#shapeHolders').children('.shape').each(function(i,v) {
-        shapeModels.push($(v).attr('class'))
+    $('#shapeHolders').find('.shape').each(function(i,v) {
+        shapeModels.push($(v).attr('class'));
     });
     var baseShapes = deployBaseModels(shapeModels);
 
@@ -88,7 +88,7 @@ $(function() {
         });
     });
 
-    $('#shapeContainer').children('.shape').each(function() {
+    $('#shapeContainer').find('.shape').each(function() {
         var className = '.'+$(this).attr('class').replace(' ui-draggable','').replace(new RegExp(' ','g'),'.');
         if ($(this).attr('class').indexOf('shape') != -1) {
             $(this).draggable({
@@ -101,7 +101,7 @@ $(function() {
 
                 }
             }); // for each of the shapeHolders (containers) with same class as the shapeModel, make them droppable and accept only this shapeModel
-            $('#shapeHolders').children(className).each(function() {
+            $('#shapeHolders').find(className).each(function() {
                 $(this).droppable({
                     greedy: true,
                     accept:className,
