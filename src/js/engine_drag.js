@@ -49,7 +49,7 @@ function checkVictory() {
 
 $(function() {
 
-    $('#shapeHolders').children('.graph').each(function(i,v) {
+    $('#shapeHolders').find('.graph').each(function(i,v) {
 		var graphClass = $(this).attr('class').replace(' ui-draggable','').replace(new RegExp(' ','g'),'.').substr('.graph'.length);
 		$(this).css({'background-image' : 'url("../img/graphics/'+graphClass+'.png")'});
 	});
