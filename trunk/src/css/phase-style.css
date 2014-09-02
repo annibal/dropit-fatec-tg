@@ -42,9 +42,13 @@ header {
     margin-left: auto;
     background: #FFF;
     -webkit-transition:all 1s ease-out;
+    -moz-transition:all 1s ease-out;
+    transition:all 1s ease-out;
 }
 #model:hover {
     -webkit-transform: scale(2.5)translate(-29px,29px);
+    -moz-transform: scale(2.5)translate(-29px,29px);
+    transform: scale(2.5)translate(-29px,29px);
     opacity: 0.7;
 }
 
@@ -58,30 +62,26 @@ header {
 }
 
 .shape {
-    float:left;
-	/* default size */
-    width:50px; height:50px;
-    margin:10px;
+    width:50px;
+    height:50px;
     
     background-size: contain;
     background-repeat: no-repeat;
 }
-.graph {
-	/* default size */
-    width:50px; height:50px;
+#shapeContainer .shape {
+    float:left;
     margin:10px;
-    
-    background-size: contain;
-    background-repeat: no-repeat;
 }
 #shapeContainer .shape:hover {
     -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    transform: scale(1.2);
 }
 
 
 body div#shapeHolders {
     background: #FFFFFF;
-    width:533px;
+    width:600px;
     height:400px;
     min-width: 256px;
     min-height: 256px;
@@ -90,11 +90,17 @@ body div#shapeHolders {
     margin-right: auto;
     margin-bottom: none;
 }
-#shapeHolders .shape {
-    position:absolute;
+#shapeHolders .container {
+    position:relative;
+    left:0px;
+    top:0px;
+    overflow: visible;
+    width:0px;
+    height:0px;
+    border:1px solid #000;
 }
-#shapeHolders .graph {
-    position:absolute;
+#shapeHolders .container .shape {
+    position: relative;
 }
 #shapeHolders .highlight-grab {
 }
