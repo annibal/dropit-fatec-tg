@@ -30,7 +30,7 @@ header {
     z-index: 215;
     position: relative;
 }
-#model {
+#model { /* preview */
     border:2px solid #553321;
     width: 100px;
     height: 100px;
@@ -61,7 +61,7 @@ header {
     z-index: 2;
 }
 
-.graph, .shape {
+.graph, .shape, .model-shape {
     /* default size */
     width:50px; height:50px;
     
@@ -90,16 +90,15 @@ body div#shapeHolders {
     margin-right: auto;
     margin-bottom: none;
 }
-#shapeHolders .container {
+#shapeHolders .container, #model .container {
     position:relative;
     left:0px;
     top:0px;
     overflow: visible;
     width:0px;
     height:0px;
-    border:1px solid #000;
 }
-#shapeHolders .container .shape, #shapeHolders .container .graph {
+#shapeHolders .container .shape, #shapeHolders .container .graph, #model .container .model-shape {
     position: relative;
 }
 #shapeHolders .highlight-grab {
