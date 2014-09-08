@@ -41,7 +41,7 @@ $(function() {
             var attrs = gamedata["phases"][_GET.d][_GET.n]["graphs"][graph]["style"];
             body.append(
                 $('<div/>').attr('class','container').append(
-                    $('<div/>').attr('class','graph '+gamedata["phases"][_GET.d][_GET.n]["shapes"][graph]["name"]).css(attrs)
+                    $('<div/>').attr('class','graph '+gamedata["phases"][_GET.d][_GET.n]["graphs"][graph]["name"]).css(attrs)
                 )
             )
         }
