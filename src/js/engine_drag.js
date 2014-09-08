@@ -1,19 +1,7 @@
 // dragging be made throught jQuery UI
+// called by phases - generates the draggable shapes, images of the shapeHolders and the minimap.
 
-var shapes = {
-    'circle' : {
-        'count' : 4
-    },
-    'triangle' : {
-        'count' : 6
-    },
-	'pilhaUp' : {
-		'count' : 1
-	},
-	'pilhaDown' : {
-		'count' : 1
-	}
-}
+shapes = gamedata["shapes"];
 var ratio = new Object();
 
 /**
@@ -75,7 +63,7 @@ function addShapeModelItem(shape, shapeName, selectedColor) {
         'height'    : shape.height() * ratio.y,
         'left'      : getCssPosInt(shape.css('left')) * ratio.x,
         'top'       : getCssPosInt(shape.css('top')) * ratio.y,
-        'background-image':'url("../img/shapes/'+shapeName+' ('+selectedColor+').png")'
+        'background-image':'url("img/shapes/'+shapeName+' ('+selectedColor+').png")'
     });
     $('#model').append(modelItem);
 }
@@ -96,7 +84,7 @@ function addGraphModelItem(graph, graphClass) {
         'height'    : graph.height() * ratio.y,
         'left'      : getCssPosInt(graph.css('left')) * ratio.x,
         'top'       : getCssPosInt(graph.css('top')) * ratio.y,
-        'background-image' : 'url("../img/graphics/'+graphClass+'.png")'
+        'background-image' : 'url("img/graphics/'+graphClass+'.png")'
     })
     $('#model').append(modelItem);
 }
@@ -108,7 +96,7 @@ function initialize() {
     
     $('#shapeHolders').find('.graph').each(function(i,v) {
         var graphClass = $(this).attr('class').replace(' ui-draggable','').replace(new RegExp(' ','g'),'.').substr('.graph'.length);
-        $(this).css({'background-image' : 'url("../img/graphics/'+graphClass+'.png")'});
+        $(this).css({'background-image' : 'url("img/graphics/'+graphClass+'.png")'});
         addGraphModelItem($(this), graphClass);
     });
 
@@ -122,10 +110,10 @@ function initialize() {
         // gets "shape circle", converts to "shape.circle.whatever" and removes "shape."
         var shapeName = value.replace(' ui-draggable','').replace(new RegExp(' ','g'),'.').substr('.shape'.length);
         
-        // chooses random number among range of shapes set by "count"
-        var index = Math.round(Math.random() * shapes[shapeName]['count']);
+        // chooses random number among range of shapes set by "variations"
+        var index = Math.round(Math.random() * shapes[shapeName]['variations']);
         if (index < 0) index = 0;
-        if (index > shapes[shapeName]['count'] -1) index = shapes[shapeName]['count'] -1;
+        if (index > shapes[shapeName]['variations'] -1) index = shapes[shapeName]['variations'] -1;
         var selectedColor = index + 1;
 
         // same "shape circle whatever" to "shape.circle.whatever" replacement
@@ -136,13 +124,13 @@ function initialize() {
 
         // sets the chosen image for each shape on shape board
         $('#shapeContainer .'+val).each(function() {
-            $(this).css({'background-image':'url("../img/shapes/'+shapeName+' ('+selectedColor+').png")'});
+            $(this).css({'background-image':'url("img/shapes/'+shapeName+' ('+selectedColor+').png")'});
         });
         
         // sets the chosen image for each shape on stage
         $('#shapeHolders .'+val).each(function() {
-            $(this).css({'background-image':'url("../img/holders/'+shapeName+'_placeholder.png")'});
-            //console.log('url("../img/holders/'+shapeName+'_placeholder.png")');
+            $(this).css({'background-image':'url("img/holders/'+shapeName+'_placeholder.png")'});
+            //console.log('url("img/holders/'+shapeName+'_placeholder.png")');
         });
         
         // duplicate containers and them shapes into preview
@@ -179,19 +167,19 @@ function initialize() {
                     },
                     over:function(e,ui) {
                         var shapeName = className.substr('.shape.'.length);
-                        $(e.target).css({'background-image':'url("../img/holders/'+shapeName+'_highlight_hover.png")'});
+                        $(e.target).css({'background-image':'url("img/holders/'+shapeName+'_highlight_hover.png")'});
                     },
                     activate:function(e,ui) {
                         var shapeName = className.substr('.shape.'.length);
-                        $(e.target).css({'background-image':'url("../img/holders/'+shapeName+'_highlight_grab.png")'});
+                        $(e.target).css({'background-image':'url("img/holders/'+shapeName+'_highlight_grab.png")'});
                     },
                     out:function(e,ui) {
                         var shapeName = className.substr('.shape.'.length);
-                        $(e.target).css({'background-image':'url("../img/holders/'+shapeName+'_placeholder.png")'});
+                        $(e.target).css({'background-image':'url("img/holders/'+shapeName+'_placeholder.png")'});
                     },
                     deactivate:function(e,ui) {
                         var shapeName = className.substr('.shape.'.length);
-                        $(e.target).css({'background-image':'url("../img/holders/'+shapeName+'_placeholder.png")'});
+                        $(e.target).css({'background-image':'url("img/holders/'+shapeName+'_placeholder.png")'});
                     }
                 });
             });
