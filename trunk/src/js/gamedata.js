@@ -24,7 +24,122 @@ var gamedata = {
     "phases":
     {
         "easy" : {
-            
+            "test_phase" : {
+                "name" : "1",
+                "shapes" : {
+                    0 : {
+                        "name" : "triangle",
+                        "style" : {
+                            "left" : "150px",
+                            "top" : "100px"
+                        }
+                    },
+                    1 : {
+                        "name" : "triangle",
+                        "style" : {
+                            "left" : "150px",
+                            "top" : "200px"
+                        }
+                    },
+                    2 : {
+                        "name" : "triangle",
+                        "style" : {
+                            "left" : "100px",
+                            "top" : "150px"
+                        }
+                    },
+                    3 : {
+                        "name" : "triangle",
+                        "style" : {
+                            "left" : "200px",
+                            "top" : "150px"
+                        }
+                    },
+                    4 : {
+                        "name" : "circle",
+                        "style" : {
+                            "left" : "150px",
+                            "top" : "150px"
+                        }
+                    },
+                },
+                "graphs" : {
+                    
+                }
+            },
+            "test_phase_2" : {
+                "name" : "2",
+                "shapes" : {
+                    0 : {"name" : "circle","style" : {
+                            "left" : "100px", "top" : "100px",}},
+                    1 : {"name" : "circle","style" : {
+                            "left" : "125px", "top" : "150px"}},
+                    2 : {"name" : "circle","style" : {
+                            "left" : "150px", "top" : "100px"}},
+                    3 : {"name" : "circle","style" : {
+                            "left" : "175px", "top" : "150px"}},
+                    8 : {"name" : "circle","style" : {
+                            "left" : "200px", "top" : "100px",}},
+                    9 : {"name" : "circle","style" : {
+                            "left" : "225px", "top" : "150px"}},
+                    10 : {"name" : "circle","style" : {
+                            "left" : "250px", "top" : "100px"}},
+                    11 : {"name" : "circle","style" : {
+                            "left" : "275px", "top" : "150px"}},
+                    4 : {"name" : "circle","style" : {
+                            "left" : "100px", "top" : "200px"}},
+                    5 : {"name" : "circle","style" : {
+                            "left" : "125px", "top" : "250px"}},
+                    6 : {"name" : "circle","style" : {
+                            "left" : "150px", "top" : "200px"}},
+                    7 : {"name" : "circle","style" : {
+                            "left" : "175px", "top" : "250px"}},
+                    12 : {"name" : "circle","style" : {
+                            "left" : "200px", "top" : "200px"}},
+                    13 : {"name" : "circle","style" : {
+                            "left" : "225px", "top" : "250px"}},
+                    14 : {"name" : "circle","style" : {
+                            "left" : "250px", "top" : "200px"}},
+                    15 : {"name" : "circle","style" : {
+                            "left" : "275px", "top" : "250px"}},
+                    
+                    16 : {"name" : "circle","style" : {
+                            "left" : "100px", "top" : "300px",}},
+                    17 : {"name" : "circle","style" : {
+                            "left" : "125px", "top" : "350px"}},
+                    18 : {"name" : "circle","style" : {
+                            "left" : "150px", "top" : "300px"}},
+                    19 : {"name" : "circle","style" : {
+                            "left" : "175px", "top" : "350px"}},
+                    20 : {"name" : "circle","style" : {
+                            "left" : "200px", "top" : "300px",}},
+                    21 : {"name" : "circle","style" : {
+                            "left" : "225px", "top" : "350px"}},
+                    22 : {"name" : "circle","style" : {
+                            "left" : "250px", "top" : "300px"}},
+                    23 : {"name" : "circle","style" : {
+                            "left" : "275px", "top" : "350px"}},
+                    24 : {"name" : "circle","style" : {
+                            "left" : "100px", "top" : "400px"}},
+                    25 : {"name" : "circle","style" : {
+                            "left" : "125px", "top" : "450px"}},
+                    26 : {"name" : "circle","style" : {
+                            "left" : "150px", "top" : "400px"}},
+                    27 : {"name" : "circle","style" : {
+                            "left" : "175px", "top" : "450px"}},
+                    28 : {"name" : "circle","style" : {
+                            "left" : "200px", "top" : "400px"}},
+                    29 : {"name" : "circle","style" : {
+                            "left" : "225px", "top" : "450px"}},
+                    30 : {"name" : "circle","style" : {
+                            "left" : "250px", "top" : "400px"}},
+                    31 : {"name" : "circle","style" : {
+                            "left" : "275px", "top" : "450px"}}
+                },
+                "graphs" : {
+                    
+                }
+            }
         },
         "medium" : {
             

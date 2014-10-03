@@ -23,25 +23,51 @@ $(function() {
         for (phase in gamedata["phases"][_GET.d]) {
             body.append($('<a/>').attr({
                 'class':'glossyBackground',
-                'href':'phase.html?d='+_GET.d+'&n='+phase
+                'href':'phase-'+_GET.d+'.html?n='+phase
             }).html(gamedata["phases"][_GET.d][phase]["name"]) );
         }
     }
-    if (sPage == "phase.html") {
+    if (sPage == "phase-easy.html") {
         var body = $('#shapeHolders');
-        for (shape in gamedata["phases"][_GET.d][_GET.n]["shapes"]) {
-            var attrs = gamedata["phases"][_GET.d][_GET.n]["shapes"][shape]["style"];
+        var body2 = $('#shapes');
+        for (shape in gamedata["phases"]["easy"][_GET.n]["shapes"]) {
+            var attrs = gamedata["phases"]["easy"][_GET.n]["shapes"][shape]["style"];
+            
+            body2.append(
+                $('<div/>').attr('class','container').append(
+                    $('<div/>').attr('class','shape '+gamedata["phases"]["easy"][_GET.n]["shapes"][shape]["name"]).css(attrs)
+                )
+            )
             body.append(
                 $('<div/>').attr('class','container').append(
-                    $('<div/>').attr('class','shape '+gamedata["phases"][_GET.d][_GET.n]["shapes"][shape]["name"]).css(attrs)
+                    $('<div/>').attr('class','shape '+gamedata["phases"]["easy"][_GET.n]["shapes"][shape]["name"]).css(attrs)
                 )
             )
         }
-        for (graph in gamedata["phases"][_GET.d][_GET.n]["graphs"]) {
-            var attrs = gamedata["phases"][_GET.d][_GET.n]["graphs"][graph]["style"];
+        for (graph in gamedata["phases"]["easy"][_GET.n]["graphs"]) {
+            var attrs = gamedata["phases"]["easy"][_GET.n]["graphs"][graph]["style"];
             body.append(
                 $('<div/>').attr('class','container').append(
-                    $('<div/>').attr('class','graph '+gamedata["phases"][_GET.d][_GET.n]["graphs"][graph]["name"]).css(attrs)
+                    $('<div/>').attr('class','graph '+gamedata["phases"]["easy"][_GET.n]["graphs"][graph]["name"]).css(attrs)
+                )
+            )
+        }
+    }
+    if (sPage == "phase-hard.html") {
+        var body = $('#shapeHolders');
+        for (shape in gamedata["phases"]["hard"][_GET.n]["shapes"]) {
+            var attrs = gamedata["phases"]["hard"][_GET.n]["shapes"][shape]["style"];
+            body.append(
+                $('<div/>').attr('class','container').append(
+                    $('<div/>').attr('class','shape '+gamedata["phases"]["hard"][_GET.n]["shapes"][shape]["name"]).css(attrs)
+                )
+            )
+        }
+        for (graph in gamedata["phases"]["hard"][_GET.n]["graphs"]) {
+            var attrs = gamedata["phases"]["hard"][_GET.n]["graphs"][graph]["style"];
+            body.append(
+                $('<div/>').attr('class','container').append(
+                    $('<div/>').attr('class','graph '+gamedata["phases"]["hard"][_GET.n]["graphs"][graph]["name"]).css(attrs)
                 )
             )
         }

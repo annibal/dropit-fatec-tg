@@ -1,0 +1,87 @@
+html, body {
+    width:100%; height:100%;
+    overflow: hidden;
+    margin:0px; padding:0px;
+}
+html {
+    margin:10px 0px;
+    height:94%;
+    position: absolute;
+    text-align: center;
+    background: #c1a367;
+}
+body {
+    width:75%;
+    margin:0px auto;
+    background: #FFF;
+    z-index: 1114;
+    border-radius: 15px;
+    padding:5px;
+}
+
+#draggable {
+    width: 150px; 
+    height: 150px;
+    line-height: 140px;
+    text-align:center;
+    background-color:#553321;
+    z-index: 2;
+}
+
+.graph, .shape {
+    /* default size */
+    width:50px; height:50px;
+    
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+#shapeContainer .shape {
+    float:left;
+    margin:10px;
+}
+#shapeContainer .shape:hover {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+
+body div#shapeHolders, body div#shapes {
+    background: #FFFFFF;
+    width:100%;
+    height:100%;
+    min-width: 256px;
+    min-height: 256px;
+}
+body div#separator {
+    border-left:1px solid #553321;
+    width:0px;
+    height:100%;
+}
+body table {
+    width:100%;
+    height:100%;
+    
+}
+#shapeHolders .container, #shapes .container {
+    position:relative;
+    left:0px;
+    top:0px;
+    overflow: visible;
+    width:0px;
+    height:0px;
+}
+#shapeHolders .container {
+    z-index: 50;
+}
+#shapes .container {
+    z-index: 100;
+}
+#shapeHolders .container .shape, #shapeHolders .container .graph,
+#shapes .container .shape{
+    position: relative;
+}
+#shapeHolders .highlight-grab {
+}
+#shapeHolders .highlight-hover {
+}
