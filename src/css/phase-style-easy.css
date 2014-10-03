@@ -85,3 +85,16 @@ body table {
 }
 #shapeHolders .highlight-hover {
 }
+#dropitLogo {
+    position: absolute;
+    padding: 5px 10px 0px 10px;
+    display: inline-block;
+    border-radius: 10px;
+    margin-left: -60px;
+    margin-top: -15px;
+    background-color: #c1a367;
+}
+#dropitLogo img {
+    width:100px;
+    height: 30px;
+}
