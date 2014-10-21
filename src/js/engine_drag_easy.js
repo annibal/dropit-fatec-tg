@@ -1,5 +1,6 @@
 // dragging be made throught jQuery UI
 // called by phases - generates the draggable shapes, images of the shapeHolders and the minimap.
+// general engine - easy, medium and hard.
 
 var shapes = gamedata["shapes"];
 var shapeRoom = new Object();
@@ -63,6 +64,8 @@ function getCssPosInt(css) {
 
 function initialize() {
     
+	shapeRoom.shapeDistance = gamedata["phases"][window.dif][_GET.n]["shapeDistance"] || 50;
+	
     $('#shapeHolders').find('.graph').each(function(i,v) {
         var graphClass = $(this).attr('class').replace(' ui-draggable','').replace(new RegExp(' ','g'),'.').substr('.graph'.length);
         $(this).css({'background-image' : 'url("img/graphics/'+graphClass+'.png")'});
@@ -85,7 +88,8 @@ function initialize() {
         }
         val = "." + val;
         
-        var posX = 0, posY = 0;
+        var posX = randRange(shapeRoom.offsetX, shapeRoom.width - getCssPosInt($(this).css("left")) );
+        var posY = randRange(shapeRoom.offsetY, shapeRoom.height - getCssPosInt($(this).css("top")) );
         var goodPos = false;
         var others = $("#shapes ").find('.shape[data-positioned="true"]');
         window.console.log(others.length);

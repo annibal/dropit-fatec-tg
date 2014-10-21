@@ -11,7 +11,10 @@ var gamedata = {
             "variations" : 4
         },
         "triangle" : {
-            "variations" : 6
+            "variations" : 4
+        },
+        "triangle_with_texture" : {
+            "variations" : 2
         },
         "pilhaUp" : {
             "variations" : 1
@@ -25,10 +28,11 @@ var gamedata = {
     {
         "easy" : {
             "test_phase" : {
-                "name" : "1",
+                "name" : "T0",
+				"shapeDistance" : 30,
                 "shapes" : {
                     0 : {
-                        "name" : "triangle",
+                        "name" : "triangle_with_texture",
                         "style" : {
                             "left" : "150px",
                             "top" : "100px"
@@ -68,7 +72,8 @@ var gamedata = {
                 }
             },
             "test_phase_2" : {
-                "name" : "2",
+                "name" : "T1",
+				"shapeDistance" : 32,
                 "shapes" : {
                     0 : {"name" : "circle","style" : {
                             "left" : "100px", "top" : "100px",}},
@@ -139,6 +144,24 @@ var gamedata = {
                 "graphs" : {
                     
                 }
+            },
+			"phase_1_bola" : {
+                "name" : "1",
+				"shapeDistance" : 30,
+                "shapes" : {
+                    0 : {
+                        "name" : "circle",
+                        "style" : {
+                            "left" : "150px",
+                            "top" : "100px",
+							"width" : "190px",
+							"height" : "190px"
+                        }
+                    }
+                },
+                "graphs" : {
+                    
+                }
             }
         },
         "medium" : {
@@ -183,6 +206,7 @@ var gamedata = {
             },
             "P" : {
                 "name" : "P",
+				"shapeDistance" : 100,
                 "shapes" : {
                     0 : {
                         "name" : "pilhaUp",
