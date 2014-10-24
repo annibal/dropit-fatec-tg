@@ -101,17 +101,17 @@ function initialize() {
             val = val.replace(' ','.');
         }
         val = "." + val;
-        
-        var posX = randRange(shapeRoom.offsetX, shapeRoom.width - getCssPosInt($(this).css("left")) );
-        var posY = randRange(shapeRoom.offsetY, shapeRoom.height - getCssPosInt($(this).css("top")) );
+        window.console.log($(this));
+        var posX = randRange(shapeRoom.offsetX, shapeRoom.width);
+        var posY = randRange(shapeRoom.offsetY, shapeRoom.height);
         var goodPos = false;
         var others = $("#shapes ").find('.shape[data-positioned="true"]');
         clog(others.length);
         var i = 0;
         var maxAttempts = 150;
         while(!goodPos && others.length > 0 && i++ < maxAttempts) {
-            posX = randRange(shapeRoom.offsetX, shapeRoom.width - getCssPosInt($(this).css("left")) );
-            posY = randRange(shapeRoom.offsetY, shapeRoom.height - getCssPosInt($(this).css("top")) );
+            posX = randRange(shapeRoom.offsetX, shapeRoom.width);
+            posY = randRange(shapeRoom.offsetY, shapeRoom.height);
             clog("Random Pos (" + posX + ", " + posY + ")");
             goodPos = true;
             others.each(function() {
