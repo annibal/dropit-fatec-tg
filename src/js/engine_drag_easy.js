@@ -2,13 +2,17 @@
 // called by phases - generates the draggable shapes, images of the shapeHolders and the minimap.
 // general engine - easy, medium and hard.
 
+// verbose control
+function clog(text) {
+    //window.console.log(text);
+}
 var shapes = gamedata["shapes"];
-var shapeRoom = new Object();
-shapeRoom.width = 525;
-shapeRoom.height = 625;
-shapeRoom.offsetX = 25;
-shapeRoom.offsetY = 25;
-shapeRoom.shapeDistance = 50;
+var defaultShapeRoom = new Object();
+defaultShapeRoom.width = 525;
+defaultShapeRoom.height = 625;
+defaultShapeRoom.offsetX = 25;
+defaultShapeRoom.offsetY = 25;
+defaultShapeRoom.shapeDistance = 50;
 
 /**
  * Returns random from min (inclusive) and max (exclusive)
@@ -57,14 +61,24 @@ function getCssPosInt(css) {
     if (css != undefined) {
         return parseInt(css.substr(0,css.length - "px".length))
     } else {
-        window.console.log('error: css to be read is undefined');
+        clog('error: css to be read is undefined');
         return -1;
     }
 }
 
 function initialize() {
     
-	shapeRoom.shapeDistance = gamedata["phases"][window.dif][_GET.n]["shapeDistance"] || 50;
+    var shapeRoom = new Object();
+    shapeRoom.shapeDistance = gamedata["phases"][window.dif][_GET.n]["shapeDistance"] || defaultShapeRoom.shapeDistance;
+    if (gamedata["phases"][window.dif][_GET.n]["shapeRoom"] != undefined) {
+        shapeRoom.width = gamedata["phases"][window.dif][_GET.n]["shapeRoom"]["width"] || defaultShapeRoom.width;
+        shapeRoom.height = gamedata["phases"][window.dif][_GET.n]["shapeRoom"]["height"] || defaultShapeRoom.height;
+        shapeRoom.offsetX = gamedata["phases"][window.dif][_GET.n]["shapeRoom"]["offsetX"] || defaultShapeRoom.offsetX;
+        shapeRoom.offsetY = gamedata["phases"][window.dif][_GET.n]["shapeRoom"]["offsetY"] || defaultShapeRoom.offsetY;
+    } else {
+        shapeRoom = defaultShapeRoom;
+    }
+    window.sr = shapeRoom;
 	
     $('#shapeHolders').find('.graph').each(function(i,v) {
         var graphClass = $(this).attr('class').replace(' ui-draggable','').replace(new RegExp(' ','g'),'.').substr('.graph'.length);
@@ -92,28 +106,28 @@ function initialize() {
         var posY = randRange(shapeRoom.offsetY, shapeRoom.height - getCssPosInt($(this).css("top")) );
         var goodPos = false;
         var others = $("#shapes ").find('.shape[data-positioned="true"]');
-        window.console.log(others.length);
+        clog(others.length);
         var i = 0;
         var maxAttempts = 150;
         while(!goodPos && others.length > 0 && i++ < maxAttempts) {
             posX = randRange(shapeRoom.offsetX, shapeRoom.width - getCssPosInt($(this).css("left")) );
             posY = randRange(shapeRoom.offsetY, shapeRoom.height - getCssPosInt($(this).css("top")) );
-            window.console.log("Random Pos (" + posX + ", " + posY + ")");
+            clog("Random Pos (" + posX + ", " + posY + ")");
             goodPos = true;
             others.each(function() {
                 var otherShape = $(this);
                 var d = getDistance(getCssPosInt(otherShape.css("left")), getCssPosInt(otherShape.css("top")), posX, posY);
-                window.console.log("Other : (" + otherShape.css("left") + ", " + otherShape.css("top") + "). Distance: " + d );
+                clog("Other : (" + otherShape.css("left") + ", " + otherShape.css("top") + "). Distance: " + d );
                 if (d < shapeRoom.shapeDistance ) {
                     goodPos = false;
-                    window.console.log("Bad Pos! Try Again.");
+                    clog("Bad Pos! Try Again.");
                     return;
                 }
             });
             if (i > maxAttempts-1)
-            window.console.log("Max attempt limit reached.");
+            clog("Max attempt limit reached.");
         }
-        window.console.log("Set that pos.");
+        clog("Set that pos.");
         
         // sets the chosen image for each shape on shape board
         $(this).css({
@@ -126,7 +140,7 @@ function initialize() {
         // sets the chosen image for each shape on stage
         $("#shapeHolders " + val).each(function() {
             $(this).css({'background-image':'url("img/holders/'+shapeName+'_placeholder.png")'});
-            //console.log('url("img/holders/'+shapeName+'_placeholder.png")');
+            clog('url("img/holders/'+shapeName+'_placeholder.png")');
         });
     });
 
