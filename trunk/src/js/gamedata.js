@@ -29,7 +29,7 @@ var gamedata = {
         "easy" : {
             "test_phase" : {
                 "name" : "T0",
-				"shapeDistance" : 30,
+                "shapeDistance" : 30,
                 "shapes" : {
                     0 : {
                         "name" : "triangle_with_texture",
@@ -73,7 +73,7 @@ var gamedata = {
             },
             "test_phase_2" : {
                 "name" : "T1",
-				"shapeDistance" : 32,
+                "shapeDistance" : 32,
                 "shapes" : {
                     0 : {"name" : "circle","style" : {
                             "left" : "100px", "top" : "100px",}},
@@ -145,9 +145,13 @@ var gamedata = {
                     
                 }
             },
-			"phase_1_bola" : {
+            "phase_1_bola" : {
                 "name" : "1",
-				"shapeDistance" : 30,
+                "shapeDistance" : 30,
+                "shapeRoom" : {
+                    "width" : 400,
+                    "height" : 500
+                },
                 "shapes" : {
                     0 : {
                         "name" : "circle",

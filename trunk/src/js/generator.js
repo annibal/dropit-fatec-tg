@@ -28,7 +28,8 @@ $(function() {
             }).html(gamedata["phases"][_GET.d][phase]["name"]) );
         }
     }
-	
+    else
+    {
 	window.dif = "easy";
 	if (sPage == "phase-easy.html") { dif = "easy"; }
 	if (sPage == "phase-medium.html") { dif = "medium"; }
@@ -81,4 +82,5 @@ $(function() {
             )
         }
     }*/
+    }
 })
