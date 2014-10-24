@@ -21,130 +21,58 @@ var gamedata = {
         },
         "pilhaDown" : {
             "variations" : 1
+        },
+        
+        "boatLeft": {
+            "variations" : 16
+        },
+        "boatRight": {
+            "variations" : 16
+        },
+        "boatBody": {
+            "variations" : 20
+        },
+        "boatFlag": {
+            "variations" : 4
+        },
+        "treeLeaves_small": {
+            "variations" : 7
+        },
+        "treeLeaves_medium": {
+            "variations" : 7
+        },
+        "treeLeaves_big": {
+            "variations" : 7
+        },
+        "wood_log": {
+            "variations" : 4
+        },
+        "roof": {
+            "variations" : 12
+        },
+        "truckCargo": {
+            "variations" : 6
+        },
+        "truckHeadWindow": {
+            "variations" : 1
+        },
+        "ice_cream": {
+            "variations" : 3
         }
     },
     
+    //1 bola  
+    //1 carro
+    //1 sorvete
+    //2 arvore
+    //2 barco
+    //2 foguete
+    //3 caminhao
+    //3 casa
+    //3 predio
     "phases":
     {
         "easy" : {
-            "test_phase" : {
-                "name" : "T0",
-                "shapeDistance" : 30,
-                "shapes" : {
-                    0 : {
-                        "name" : "triangle_with_texture",
-                        "style" : {
-                            "left" : "150px",
-                            "top" : "100px"
-                        }
-                    },
-                    1 : {
-                        "name" : "triangle",
-                        "style" : {
-                            "left" : "150px",
-                            "top" : "200px"
-                        }
-                    },
-                    2 : {
-                        "name" : "triangle",
-                        "style" : {
-                            "left" : "100px",
-                            "top" : "150px"
-                        }
-                    },
-                    3 : {
-                        "name" : "triangle",
-                        "style" : {
-                            "left" : "200px",
-                            "top" : "150px"
-                        }
-                    },
-                    4 : {
-                        "name" : "circle",
-                        "style" : {
-                            "left" : "150px",
-                            "top" : "150px"
-                        }
-                    },
-                },
-                "graphs" : {
-                    
-                }
-            },
-            "test_phase_2" : {
-                "name" : "T1",
-                "shapeDistance" : 32,
-                "shapes" : {
-                    0 : {"name" : "circle","style" : {
-                            "left" : "100px", "top" : "100px",}},
-                    1 : {"name" : "circle","style" : {
-                            "left" : "125px", "top" : "150px"}},
-                    2 : {"name" : "circle","style" : {
-                            "left" : "150px", "top" : "100px"}},
-                    3 : {"name" : "circle","style" : {
-                            "left" : "175px", "top" : "150px"}},
-                    8 : {"name" : "circle","style" : {
-                            "left" : "200px", "top" : "100px",}},
-                    9 : {"name" : "circle","style" : {
-                            "left" : "225px", "top" : "150px"}},
-                    10 : {"name" : "circle","style" : {
-                            "left" : "250px", "top" : "100px"}},
-                    11 : {"name" : "circle","style" : {
-                            "left" : "275px", "top" : "150px"}},
-                    4 : {"name" : "circle","style" : {
-                            "left" : "100px", "top" : "200px"}},
-                    5 : {"name" : "circle","style" : {
-                            "left" : "125px", "top" : "250px"}},
-                    6 : {"name" : "circle","style" : {
-                            "left" : "150px", "top" : "200px"}},
-                    7 : {"name" : "circle","style" : {
-                            "left" : "175px", "top" : "250px"}},
-                    12 : {"name" : "circle","style" : {
-                            "left" : "200px", "top" : "200px"}},
-                    13 : {"name" : "circle","style" : {
-                            "left" : "225px", "top" : "250px"}},
-                    14 : {"name" : "circle","style" : {
-                            "left" : "250px", "top" : "200px"}},
-                    15 : {"name" : "circle","style" : {
-                            "left" : "275px", "top" : "250px"}},
-                    
-                    16 : {"name" : "circle","style" : {
-                            "left" : "100px", "top" : "300px",}},
-                    17 : {"name" : "circle","style" : {
-                            "left" : "125px", "top" : "350px"}},
-                    18 : {"name" : "circle","style" : {
-                            "left" : "150px", "top" : "300px"}},
-                    19 : {"name" : "circle","style" : {
-                            "left" : "175px", "top" : "350px"}},
-                    20 : {"name" : "circle","style" : {
-                            "left" : "200px", "top" : "300px",}},
-                    21 : {"name" : "circle","style" : {
-                            "left" : "225px", "top" : "350px"}},
-                    22 : {"name" : "circle","style" : {
-                            "left" : "250px", "top" : "300px"}},
-                    23 : {"name" : "circle","style" : {
-                            "left" : "275px", "top" : "350px"}},
-                    24 : {"name" : "circle","style" : {
-                            "left" : "100px", "top" : "400px"}},
-                    25 : {"name" : "circle","style" : {
-                            "left" : "125px", "top" : "450px"}},
-                    26 : {"name" : "circle","style" : {
-                            "left" : "150px", "top" : "400px"}},
-                    27 : {"name" : "circle","style" : {
-                            "left" : "175px", "top" : "450px"}},
-                    28 : {"name" : "circle","style" : {
-                            "left" : "200px", "top" : "400px"}},
-                    29 : {"name" : "circle","style" : {
-                            "left" : "225px", "top" : "450px"}},
-                    30 : {"name" : "circle","style" : {
-                            "left" : "250px", "top" : "400px"}},
-                    31 : {"name" : "circle","style" : {
-                            "left" : "275px", "top" : "450px"}}
-                },
-                "graphs" : {
-                    
-                }
-            },
             "phase_1_bola" : {
                 "name" : "1",
                 "shapeDistance" : 30,
@@ -158,8 +86,104 @@ var gamedata = {
                         "style" : {
                             "left" : "150px",
                             "top" : "100px",
-							"width" : "190px",
-							"height" : "190px"
+                            "width" : "190px",
+                            "height" : "190px"
+                        }
+                    }
+                },
+                "graphs" : {
+                    
+                }
+            },
+            "phase_sorvete" : {
+                "name" : "2",
+                "shapeDistance" : 150,
+                "shapeRoom" : {
+                    "width" : 400, "height" : 500
+                },
+                "shapes" : {
+                    0 : {
+                        "name" : "circle",
+                        "style" : {
+                            "left" : "150px",
+                            "top" : "17px",
+                            "width": "100px",
+                            "height": "100px"
+                        }
+                    },
+                    1 : {
+                        "name" : "circle",
+                        "style" : {
+                            "left" : "95px",
+                            "top" : "100px",
+                            "width": "100px",
+                            "height": "100px"
+                        }
+                    },
+                    2: {
+                        "name" : "circle",
+                        "style" : {
+                            "left" : "205px",
+                            "top" : "100px",
+                            "width": "100px",
+                            "height": "100px"
+                        }
+                    },
+                    3: {
+                        "name" : "ice_cream",
+                        "style" : {
+                            "left" : "100px",
+                            "top" : "200px",
+                            "width": "200px",
+                            "height": "300px"
+                        }
+                    }
+                },
+                "graphs" : {
+                    
+                }
+            },
+            "phase_car" : {
+                "name" : "3",
+                "shapeDistance" : 30,
+                "shapeRoom" : {
+                    "width" : 250, "height" : 500
+                },
+                "shapes" : {
+                    0 : {
+                        "name" : "circle",
+                        "style" : {
+                            "left" : "290px",
+                            "top" : "276px",
+                            "width": "100px",
+                            "height": "100px"
+                        }
+                    },
+                    1 : {
+                        "name" : "circle",
+                        "style" : {
+                            "left" : "90px",
+                            "top" : "276px",
+                            "width": "100px",
+                            "height": "100px"
+                        }
+                    },
+                    2: {
+                        "name" : "boatBody",
+                        "style" : {
+                            "left" : "70px",
+                            "top" : "179px",
+                            "width": "340px",
+                            "height": "100px"
+                        }
+                    },
+                    3: {
+                        "name" : "boatBody",
+                        "style" : {
+                            "left" : "140px",
+                            "top" : "100px",
+                            "width": "200px",
+                            "height": "80px"
                         }
                     }
                 },
@@ -169,38 +193,47 @@ var gamedata = {
             }
         },
         "medium" : {
-            
-        },
-        "hard" : {
-            "test_phase" : {
+            "phase_tree" : {
                 "name" : "1",
+                "shapeDistance" : 30,
+                "shapeRoom" : {
+                    "width" : 250, "height" : 500
+                },
                 "shapes" : {
                     0 : {
-                        "name" : "circle",
+                        "name" : "treeLeaves_small",
                         "style" : {
-                            "left" : "10px",
-                            "top" : "10px"
+                            "left" : "100px",
+                            "top" : "50px",
+                            "width": "125px",
+                            "height": "75px"
                         }
                     },
                     1 : {
-                        "name" : "circle",
+                        "name" : "treeLeaves_medium",
                         "style" : {
-                            "left" : "540px",
-                            "top" : "340px"
+                            "left" : "88px",
+                            "top" : "125px",
+                            "width": "150px",
+                            "height": "75px"
                         }
                     },
-                    2 : {
-                        "name" : "circle",
+                    2: {
+                        "name" : "treeLeaves_big",
                         "style" : {
-                            "left" : "280px",
-                            "top" : "20px"
+                            "left" : "76px",
+                            "top" : "200px",
+                            "width": "175px",
+                            "height": "75px"
                         }
                     },
-                    3 : {
-                        "name" : "triangle",
+                    3: {
+                        "name" : "wood_log",
                         "style" : {
-                            "left" : "380px",
-                            "top" : "20px"
+                            "left" : "140px",
+                            "top" : "275px",
+                            "width": "50px",
+                            "height": "120px"
                         }
                     }
                 },
@@ -208,43 +241,394 @@ var gamedata = {
                     
                 }
             },
-            "P" : {
-                "name" : "P",
-				"shapeDistance" : 100,
+            "phase_boat" : {
+                "name" : "2",
+                "shapeDistance" : 60,
+                "shapeRoom" : {
+                    "width" : 400, "height" : 500
+                },
                 "shapes" : {
                     0 : {
-                        "name" : "pilhaUp",
+                        "name" : "boatBody",
                         "style" : {
-                            "left" : "210px",
-                            "top" : "150px",
-                            "width" : "128px",
-                            "height" : "128px",
-                            "z-index" : "1"
+                            "left" : "150px",
+                            "top" : "200px",
+                            "width": "175px",
+                            "height": "75px"
                         }
                     },
                     1 : {
-                        "name" : "pilhaDown",
+                        "name" : "boatFlag",
                         "style" : {
-                            "left" : "284px",
-                            "top" : "150px",
-                            "width" : "128px",
-                            "height" : "128px",
-                            "z-index" : "1"
+                            "left" : "218px",
+                            "top" : "52px",
+                            "width": "150px",
+                            "height": "150px"
+                        }
+                    },
+                    2: {
+                        "name" : "boatLeft",
+                        "style" : {
+                            "left" : "56px",
+                            "top" : "200px",
+                            "width": "95px",
+                            "height": "75px"
+                        }
+                    },
+                    3: {
+                        "name" : "boatRight",
+                        "style" : {
+                            "left" : "324px",
+                            "top" : "200px",
+                            "width": "95px",
+                            "height": "75px"
                         }
                     }
                 },
                 "graphs" : {
-                    0: {
-                        "name" : "controller",
+                    
+                }
+            },
+            "phase_rocket" : {
+                "name" : "3",
+                "shapeDistance" : 60,
+                "shapeRoom" : {
+                    "width" : 250, "height" : 450
+                },
+                "shapes" : {
+                    0 : {
+                        "name" : "circle",
                         "style" : {
-                            "left" : "129px",
-                            "top" : "60px",
-                            "width" : "356px",
-                            "height" : "356px"
+                            "left" : "200px",
+                            "top" : "170px",
+                            "width": "100px",
+                            "height": "100px",
+                            "z-Index": "3"
+                        }
+                    },
+                    1 : {
+                        "name" : "wood_log",
+                        "style" : {
+                            "left" : "172px",
+                            "top" : "100px",
+                            "width": "150px",
+                            "height": "350px",
+                            "z-Index": "2"
+                        }
+                    },
+                    2: {
+                        "name" : "triangle",
+                        "style" : {
+                            "left" : "120px",
+                            "top" : "4px",
+                            "width": "250px",
+                            "height": "100px",
+                            "z-Index": "2"
+                        }
+                    },
+                    3: {
+                        "name" : "roof",
+                        "style" : {
+                            "left" : "100px",
+                            "top" : "300px",
+                            "width": "150px",
+                            "height": "150px",
+                            "z-Index": "1"
+                        }
+                    },
+                    4: {
+                        "name" : "roof",
+                        "style" : {
+                            "left" : "245px",
+                            "top" : "300px",
+                            "width": "150px",
+                            "height": "150px",
+                            "z-Index": "1"
                         }
                     }
+                },
+                "graphs" : {
+                    
+                }
+            }
+        },
+        "hard" : {
+//            "P" : {
+//                "name" : "P",
+//                "shapeDistance" : 100,
+//                "shapes" : {
+//                    0 : {
+//                        "name" : "pilhaUp",
+//                        "style" : {
+//                            "left" : "210px",
+//                            "top" : "150px",
+//                            "width" : "128px",
+//                            "height" : "128px",
+//                            "z-index" : "1"
+//                        }
+//                    },
+//                    1 : {
+//                        "name" : "pilhaDown",
+//                        "style" : {
+//                            "left" : "284px",
+//                            "top" : "150px",
+//                            "width" : "128px",
+//                            "height" : "128px",
+//                            "z-index" : "1"
+//                        }
+//                    }
+//                },
+//                "graphs" : {
+//                    0: {
+//                        "name" : "controller",
+//                        "style" : {
+//                            "left" : "129px",
+//                            "top" : "60px",
+//                            "width" : "356px",
+//                            "height" : "356px"
+//                        }
+//                    }
+//                }
+//            }
+            "phase_truck" : {
+                "name" : "1",
+                "shapeDistance" : 90,
+                "shapeRoom" : {
+                    "width" : 250, "height" : 400, "offsetX" : 0, "offsetY" : 0
+                },
+                "shapes" : {
+                    0 : {
+                        "name" : "boatBody",
+                        "style" : {
+                            "left" : "20px",
+                            "top" : "100px",
+                            "width": "250px",
+                            "height": "150px"
+                        }
+                    },
+                    1 : {
+                        "name" : "boatBody",
+                        "style" : {
+                            "left" : "280px",
+                            "top" : "130px",
+                            "width": "120px",
+                            "height": "120px"
+                        }
+                    },
+                    2: {
+                        "name" : "circle",
+                        "style" : {
+                            "left" : "20px",
+                            "top" : "250px",
+                            "width": "60px",
+                            "height": "60px"
+                        }
+                    },
+                    3: {
+                        "name" : "circle",
+                        "style" : {
+                            "left" : "200px",
+                            "top" : "250px",
+                            "width": "60px",
+                            "height": "60px"
+                        }
+                    },
+                    4: {
+                        "name" : "circle",
+                        "style" : {
+                            "left" : "330px",
+                            "top" : "250px",
+                            "width": "60px",
+                            "height": "60px"
+                        }
+                    },
+                    5: {
+                        "name" : "truckHeadWindow",
+                        "style" : {
+                            "left" : "335px",
+                            "top" : "135px",
+                            "width": "60px",
+                            "height": "60px",
+                            "z-Index": "2"
+                        }
+                    }
+                },
+                "graphs" : {
+                    
+                }
+            },
+            "phase_house" : {
+                "name" : "2",
+                "shapeDistance" : 90,
+                "shapeRoom" : {
+                    "width" : 250, "height" : 400, "offsetX" : 25, "offsetY" : 25
+                },
+                "shapes" : {
+                    0 : {
+                        "name" : "boatBody",
+                        "style" : {
+                            "left" : "70px",
+                            "top" : "200px",
+                            "width": "250px",
+                            "height": "250px"
+                        }
+                    },
+                    1 : {
+                        "name" : "roof",
+                        "style" : {
+                            "left" : "70px",
+                            "top" : "30px",
+                            "width": "250px",
+                            "height": "170px"
+                        }
+                    },
+                    2: {
+                        "name" : "truckHeadWindow",
+                        "style" : {
+                            "left" : "165px",
+                            "top" : "330px",
+                            "width": "60px",
+                            "height": "120px",
+                            "z-Index": "2"
+                        }
+                    },
+                    3: {
+                        "name" : "truckHeadWindow",
+                        "style" : {
+                            "left" : "240px",
+                            "top" : "230px",
+                            "width": "60px",
+                            "height": "60px",
+                            "z-Index": "2"
+                        }
+                    },
+                    4: {
+                        "name" : "truckHeadWindow",
+                        "style" : {
+                            "left" : "90px",
+                            "top" : "230px",
+                            "width": "60px",
+                            "height": "60px",
+                            "z-Index": "2"
+                        }
+                    }
+                },
+                "graphs" : {
+                    
+                }
+            },
+            "phase_building" : {
+                "name" : "3",
+                "shapeDistance" : 90,
+                "shapeRoom" : {
+                    "width" : 250, "height" : 400, "offsetX" : 25, "offsetY" : 25
+                },
+                "shapes" : {
+                    0 : {
+                        "name" : "boatBody",
+                        "style" : {
+                            "left" : "70px",
+                            "top" : "50px",
+                            "width": "200px",
+                            "height": "450px"
+                        }
+                    },
+                    1 : {
+                        "name" : "circle",
+                        "style" : {
+                            "left" : "90px",
+                            "top" : "80px",
+                            "width": "50px",
+                            "height": "50px",
+                            "z-Index": "2"
+                        }
+                    },
+                    2 : {
+                        "name" : "circle",
+                        "style" : {
+                            "left" : "90px",
+                            "top" : "150px",
+                            "width": "50px",
+                            "height": "50px",
+                            "z-Index": "2"
+                        }
+                    },
+                    3 : {
+                        "name" : "circle",
+                        "style" : {
+                            "left" : "90px",
+                            "top" : "220px",
+                            "width": "50px",
+                            "height": "50px",
+                            "z-Index": "2"
+                        }
+                    },
+                    4 : {
+                        "name" : "circle",
+                        "style" : {
+                            "left" : "90px",
+                            "top" : "290px",
+                            "width": "50px",
+                            "height": "50px",
+                            "z-Index": "2"
+                        }
+                    },
+                    5 : {
+                        "name" : "circle",
+                        "style" : {
+                            "left" : "200px",
+                            "top" : "80px",
+                            "width": "50px",
+                            "height": "50px",
+                            "z-Index": "2"
+                        }
+                    },
+                    6 : {
+                        "name" : "circle",
+                        "style" : {
+                            "left" : "200px",
+                            "top" : "150px",
+                            "width": "50px",
+                            "height": "50px",
+                            "z-Index": "2"
+                        }
+                    },
+                    7 : {
+                        "name" : "circle",
+                        "style" : {
+                            "left" : "200px",
+                            "top" : "220px",
+                            "width": "50px",
+                            "height": "50px",
+                            "z-Index": "2"
+                        }
+                    },
+                    8 : {
+                        "name" : "circle",
+                        "style" : {
+                            "left" : "200px",
+                            "top" : "290px",
+                            "width": "50px",
+                            "height": "50px",
+                            "z-Index": "2"
+                        }
+                    },
+                    9: {
+                        "name" : "truckHeadWindow",
+                        "style" : {
+                            "left" : "140px",
+                            "top" : "380px",
+                            "width": "60px",
+                            "height": "120px",
+                            "z-Index": "3"
+                        }
+                    }
+                },
+                "graphs" : {
+                    
                 }
             }
         }
-    }
+        
+    }// end of phases
 }

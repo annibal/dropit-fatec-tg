@@ -20,9 +20,9 @@ for (var i = 0; i < getParamArrTemp.length; i++) {
 $(function() {
     var contentContainer;
     if (sPage == "phases-selection.html") {
-        var body = $(document.body);
+        var abody = $("#content");
         for (phase in gamedata["phases"][_GET.d]) {
-            body.append($('<a/>').attr({
+            abody.append($('<a/>').attr({
                 'class':'glossyBackground',
                 'href':'phase-'+_GET.d+'.html?n='+phase
             }).html(gamedata["phases"][_GET.d][phase]["name"]) );
@@ -43,7 +43,7 @@ $(function() {
         for (graph in gamedata["phases"][dif][_GET.n]["graphs"]) {
             var attrs = gamedata["phases"][dif][_GET.n]["graphs"][graph]["style"];
             body.append(
-                $('<div/>').attr('class','container').append(
+                $('<div/>').attr('class','container').css('z-Index',attrs["z-Index"] || attrs['z-index'] || 1).append(
                     $('<div/>').attr('class','graph '+gamedata["phases"][dif][_GET.n]["graphs"][graph]["name"]).css(attrs)
                 )
             )
@@ -52,12 +52,12 @@ $(function() {
             var attrs = gamedata["phases"][dif][_GET.n]["shapes"][shape]["style"];
             
             body2.append(
-                $('<div/>').attr('class','container').append(
+                $('<div/>').attr('class','container').css('z-Index',attrs["z-Index"] || attrs['z-index'] || 1).append(
                     $('<div/>').attr('class','shape '+gamedata["phases"][dif][_GET.n]["shapes"][shape]["name"]).css(attrs)
                 )
             )
             body.append(
-                $('<div/>').attr('class','container').append(
+                $('<div/>').attr('class','container').css('z-Index',attrs["z-Index"] || attrs['z-index'] || 1).append(
                     $('<div/>').attr('class','shape '+gamedata["phases"][dif][_GET.n]["shapes"][shape]["name"]).css(attrs)
                 )
             )
