@@ -1,5 +1,8 @@
 #content {
-    padding-top:15px;
+    padding-top:35px;
+}
+body,html {
+    width:800px;
 }
 a { 
     text-shadow: 0px 1px 1px rgba(255,255,255,0.6), 0px -1px 1px rgba(0,0,0,0.6);
@@ -15,9 +18,9 @@ a {
     box-shadow:       0px 0px 10px #553321,
                 inset 0px -5px 15px rgba(0,0,0,0.2),
                 inset 0px 5px 15px rgba(255,255,255,0.3);
-    padding:20px 40px;
-    font-size: 65pt;
-    margin: 25px;
+    padding:5px 10px;
+    font-size: 45pt;
+    margin: 5px;
     width: 128px; height:128px;
     border-radius: 15px;
     
@@ -46,20 +49,22 @@ a:active { /* clique */
     background-image: radial-gradient(ellipse at center, rgba(255,255,255,0) 0%,rgba(255,255,255,0.3) 50%,rgba(255,255,255,0) 51%,rgba(255,255,255,0) 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffaa', endColorstr='#00ffffaa',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
     
-    background-position: -444px -320px;
+    background-position: -444px -120px;
     background-size: 812px 512px;
     background-repeat: no-repeat;
 }
 .glossyBackground:hover {
-    background-position: -449px -325px;
+    background-position: -449px -125px;
     background-repeat: no-repeat;
 }
-.glossyBackground .difficulty-indicator {
+.glossyBackground .difficulty-indicator { /* the image in each block */
     opacity: 0.7;
     
     -webkit-transition: all 0.3s ease-out;
     -moz-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
+    width:120px;
+    height:120px;
 }
 .glossyBackground:hover .difficulty-indicator {
     opacity: 0.9;
@@ -73,20 +78,20 @@ a:active { /* clique */
     box-shadow:       0px 0px 20px #553321,
                 inset 0px -10px 30px rgba(0,0,0,0.2),
                 inset 0px 10px 30px rgba(255,255,255,0.3);
-    padding:20px 40px;
-    font-size: 58pt;
-    margin: 30px;
-    width: 256px; height:256px;
-    border-radius: 30px;
+    padding:10px 15px;
+    font-size: 34pt;
+    margin: 12px;
+    width: 204px; height:204px;
+    border-radius: 10px;
     
-    background-position: -888px -640px;
-    background-size: 1624px 1024px;
+    background-position: -688px -280px;
+    background-size: 1124px 524px;
     background-repeat: no-repeat;
     display: table-cell;
     vertical-align: middle;
 }
 .big:hover {
-    background-position: -898px -650px;
+    background-position: -688px -290px;
     background-repeat: no-repeat;
 }
 

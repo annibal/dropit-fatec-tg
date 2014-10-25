@@ -74,7 +74,7 @@ var gamedata = {
     {
         "easy" : {
             "phase_1_bola" : {
-                "name" : "1",
+                "name" : "F1",
                 "shapeDistance" : 30,
                 "shapeRoom" : {
                     "width" : 400,
@@ -96,11 +96,8 @@ var gamedata = {
                 }
             },
             "phase_sorvete" : {
-                "name" : "2",
+                "name" : "F2",
                 "shapeDistance" : 150,
-                "shapeRoom" : {
-                    "width" : 400, "height" : 500
-                },
                 "shapes" : {
                     0 : {
                         "name" : "circle",
@@ -144,7 +141,7 @@ var gamedata = {
                 }
             },
             "phase_car" : {
-                "name" : "3",
+                "name" : "F3",
                 "shapeDistance" : 30,
                 "shapeRoom" : {
                     "width" : 250, "height" : 500
@@ -194,7 +191,7 @@ var gamedata = {
         },
         "medium" : {
             "phase_tree" : {
-                "name" : "1",
+                "name" : "M1",
                 "shapeDistance" : 30,
                 "shapeRoom" : {
                     "width" : 250, "height" : 500
@@ -242,7 +239,7 @@ var gamedata = {
                 }
             },
             "phase_boat" : {
-                "name" : "2",
+                "name" : "M2",
                 "shapeDistance" : 60,
                 "shapeRoom" : {
                     "width" : 400, "height" : 500
@@ -290,7 +287,7 @@ var gamedata = {
                 }
             },
             "phase_rocket" : {
-                "name" : "3",
+                "name" : "M3",
                 "shapeDistance" : 60,
                 "shapeRoom" : {
                     "width" : 250, "height" : 450
@@ -391,7 +388,7 @@ var gamedata = {
 //                }
 //            }
             "phase_truck" : {
-                "name" : "1",
+                "name" : "D1",
                 "shapeDistance" : 90,
                 "shapeRoom" : {
                     "width" : 250, "height" : 400, "offsetX" : 0, "offsetY" : 0
@@ -458,7 +455,7 @@ var gamedata = {
                 }
             },
             "phase_house" : {
-                "name" : "2",
+                "name" : "D2",
                 "shapeDistance" : 90,
                 "shapeRoom" : {
                     "width" : 250, "height" : 400, "offsetX" : 25, "offsetY" : 25
@@ -518,7 +515,7 @@ var gamedata = {
                 }
             },
             "phase_building" : {
-                "name" : "3",
+                "name" : "D3",
                 "shapeDistance" : 90,
                 "shapeRoom" : {
                     "width" : 250, "height" : 400, "offsetX" : 25, "offsetY" : 25
