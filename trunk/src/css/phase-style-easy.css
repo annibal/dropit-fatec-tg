@@ -11,7 +11,7 @@ html {
     background: #c1a367;
 }
 body {
-    width:75%;
+    width:770px; height:565px;
     margin:0px auto;
     background: #FFF;
     z-index: 1114;

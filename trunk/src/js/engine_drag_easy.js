@@ -6,13 +6,19 @@
 function clog(text) {
     //window.console.log(text);
 }
+
+// draws the spawn area
+var debugShapeRoom = false;
+
 var shapes = gamedata["shapes"];
 var defaultShapeRoom = new Object();
-defaultShapeRoom.width = 525;
-defaultShapeRoom.height = 625;
-defaultShapeRoom.offsetX = 25;
-defaultShapeRoom.offsetY = 25;
+defaultShapeRoom.width = 310;
+defaultShapeRoom.height = 510; // 10 less from an decent width/height to improve performance
+defaultShapeRoom.offsetX = 5;
+defaultShapeRoom.offsetY = -10;
 defaultShapeRoom.shapeDistance = 50;
+defaultShapeRoom.maxAttempts = 550;
+var overflower = 20; // used to precisely define maximum width when finding ideal position
 
 /**
  * Returns random from min (inclusive) and max (exclusive)
@@ -27,31 +33,25 @@ function randRange(min, max) {
 function getDistance(x1,y1,x2,y2) {
     return Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
 }
-
 /**
- * Deploys Models removind duplicates. <br/>
- * Also returns array with the deployed.
- */
-function deployBaseModels(models) {
-    // TODO: shuffle order of appending
-    var deployed = []
-    var okDeploy;
-    $(models).each(function(i,shape)
-    {
-        deployed.push(shape); // add it to the deployeds
-        
-    });
-    return deployed;
+ * Generates a block at x y with size w h. --> in objSize Object.
+ * Default id is "generatedBlockAt234567890" (timestamp)
+ * Default class is "genBlock"
+ * with no bg ("none") and a "1px solid #000" border
+ */
+function makeBlock(x,y,w,h) {
+    var genBlock = document.createElement("div");
+    genBlock.setAttribute("style","display:block; position:absolute; " + 
+        "left:"+x+"px; "+
+        "top: "+y+"px; "+
+        "width: "+w+"px; "+
+        "height: "+h+"px; "+
+        "border: "+( "1px solid #000;") + 
+        "background: "+ ( "rgba(100,100,255,0.1);") );
+    genBlock.setAttribute("id", "genBlock");
+    document.body.appendChild(genBlock);
+    return genBlock;
 }
-
-/**
- * Checks via jQuery UI's "ui-droppable" class if there is any open hole and claims victory.
- * @returns boolean if win
- */
-function checkVictory() {
-    return ($('.ui-droppable').length == 0)
-}
-
 /**
  * Converts string with "px" on end to integer. specific to "px" values, but works with any 2 char length modifier
  * @param string css "NNNpx"
@@ -65,6 +65,59 @@ function getCssPosInt(css) {
         return -1;
     }
 }
+function decayPosXToBlockOverflow(posX,obj, father) {
+    var min_x = father.offset().left;
+    var max_x = min_x + father.width() - overflower;
+    var myW = posX + obj.width();
+    clog("min_x: " + min_x + ", max_x: "+max_x+", posX: "+posX+", myW: "+myW);
+    if(myW > max_x) {clog("Obj extrapolating RIGHT.");} else {clog("Obj is within RIGHT boundary, OK");}
+    if(min_x > posX) {clog("Obj hidden before LEFT.");} else {clog("Obj is within LEFT boundary, OK");}
+    while(myW > max_x) {
+        clog(min_x + " < " + posX + ", " + (posX + obj.width()) + " < " + max_x);
+        posX--;
+        myW = (posX + obj.width());
+    }
+    return posX;
+}
+function decayPosYToBlockOverflow(posY,obj, father) {
+    var min_y = father.offset().left;
+    var max_y = min_y + father.height() - overflower;
+    var myW = posY + obj.height();
+    clog("min_y: " + min_y + ", max_y: "+max_y+", posY: "+posY+", myW: "+myW);
+    if(myW > max_y) {clog("Obj extrapolating RIGHT.");} else {clog("Obj is within RIGHT boundary, OK");}
+    if(min_y > posY) {clog("Obj hidden before LEFT.");} else {clog("Obj is within LEFT boundary, OK");}
+    while(myW > max_y) {
+        clog(min_y + " < " + posY + ", " + (posY + obj.height()) + " < " + max_y);
+        posY--;
+        myW = (posY + obj.height());
+    }
+    return posY;
+}
+
+ // --------------------- specific functions
+ 
+/**
+ * Deploys Models removind duplicates. <br/>
+ * Also returns array with the deployed.
+ */
+function deployBaseModels(models) {
+    var deployed = []
+    var okDeploy;
+    $(models).each(function(i,shape)
+    {
+        deployed.push(shape); // add it to the deployeds
+        
+    });
+    return deployed;
+}
+/**
+ * Checks via jQuery UI's "ui-droppable" class if there is any open hole and claims victory.
+ * @returns boolean if win
+ */
+function checkVictory() {
+    return ($('.ui-droppable').length == 0)
+}
+
 
 function initialize() {
     
@@ -78,7 +131,11 @@ function initialize() {
     } else {
         shapeRoom = defaultShapeRoom;
     }
-    window.sr = shapeRoom;
+    if (debugShapeRoom) {
+        var s = $("#shapes");
+        makeBlock(s.offset().left + shapeRoom.offsetX, s.offset().top + shapeRoom.offsetY, shapeRoom.width, shapeRoom.height);
+        window.sr = shapeRoom;
+    }
 	
     $('#shapeHolders').find('.graph').each(function(i,v) {
         var graphClass = $(this).attr('class').replace(' ui-draggable','').replace(new RegExp(' ','g'),'.').substr('.graph'.length);
@@ -93,25 +150,36 @@ function initialize() {
         var index = Math.round(Math.random() * shapes[shapeName]['variations']);
         if (index < 0) index = 0;
         if (index > shapes[shapeName]['variations'] -1) index = shapes[shapeName]['variations'] -1;
-        var selectedColor = index + 1;
+        var selectedColor = index + 1;  
 
         // same "shape circle whatever" to "shape.circle.whatever" replacement
         var val = $(shape).attr("class");
         while(val.indexOf(' ') != -1) {
             val = val.replace(' ','.');
         }
+        var shapeObj = $('#shapes');
         val = "." + val;
-        window.console.log($(this));
+        clog("This: " + $(this)+ " - " + val);
+        clog("X:"+$(this).offset().left+", Y:"+$(this).offset().top+", W:"+$(this).width()+", H:"+$(this).height());
         var posX = randRange(shapeRoom.offsetX, shapeRoom.width);
         var posY = randRange(shapeRoom.offsetY, shapeRoom.height);
+        
+        // first time
+        posX = decayPosXToBlockOverflow(posX,$(this),shapeObj);
+        posY = decayPosYToBlockOverflow(posY,$(this),shapeObj);
+        
         var goodPos = false;
-        var others = $("#shapes ").find('.shape[data-positioned="true"]');
+        var others = $("#shapes").find('.shape[data-positioned="true"]');
         clog(others.length);
         var i = 0;
-        var maxAttempts = 150;
+        var maxAttempts = defaultShapeRoom.maxAttempts || 150 ;
         while(!goodPos && others.length > 0 && i++ < maxAttempts) {
             posX = randRange(shapeRoom.offsetX, shapeRoom.width);
             posY = randRange(shapeRoom.offsetY, shapeRoom.height);
+            
+            posX = decayPosXToBlockOverflow(posX,$(this),shapeObj);
+            posY = decayPosYToBlockOverflow(posY,$(this),shapeObj);
+            
             clog("Random Pos (" + posX + ", " + posY + ")");
             goodPos = true;
             others.each(function() {
@@ -168,8 +236,8 @@ function initialize() {
                         $(e.target).droppable("destroy");
                         
                         window.setTimeout(function() {
-							if (checkVictory()) alert("Ganhou!");
-						}, 100);
+                            if (checkVictory()) alert("Ganhou!");
+                        }, 100);
                     },
                     over:function(e,ui) {
                         var shapeName = className.substr('.shape.'.length);
