@@ -84,8 +84,8 @@ function decayPosYToBlockOverflow(posY,obj, father) {
     var max_y = min_y + father.height() - overflower;
     var myW = posY + obj.height();
     clog("min_y: " + min_y + ", max_y: "+max_y+", posY: "+posY+", myW: "+myW);
-    if(myW > max_y) {clog("Obj extrapolating RIGHT.");} else {clog("Obj is within RIGHT boundary, OK");}
-    if(min_y > posY) {clog("Obj hidden before LEFT.");} else {clog("Obj is within LEFT boundary, OK");}
+    if(myW > max_y) {clog("Obj extrapolating TOP.");} else {clog("Obj is within BOTTOM boundary, OK");}
+    if(min_y > posY) {clog("Obj hidden before BOTTOM.");} else {clog("Obj is within TOP boundary, OK");}
     while(myW > max_y) {
         clog(min_y + " < " + posY + ", " + (posY + obj.height()) + " < " + max_y);
         posY--;
