@@ -150,37 +150,37 @@ var gamedata = {
                     0 : {
                         "name" : "circle",
                         "style" : {
-                            "left" : "290px",
-                            "top" : "276px",
-                            "width": "100px",
-                            "height": "100px"
+                            "left" : "232px",
+                            "top" : "220px",
+                            "width": "80px",
+                            "height": "80px"
                         }
                     },
                     1 : {
                         "name" : "circle",
                         "style" : {
-                            "left" : "90px",
-                            "top" : "276px",
-                            "width": "100px",
-                            "height": "100px"
+                            "left" : "72px",
+                            "top" : "220px",
+                            "width": "80px",
+                            "height": "80px"
                         }
                     },
                     2: {
                         "name" : "boatBody",
                         "style" : {
-                            "left" : "70px",
-                            "top" : "179px",
-                            "width": "340px",
-                            "height": "100px"
+                            "left" : "56px",
+                            "top" : "143px",
+                            "width": "272px",
+                            "height": "80px"
                         }
                     },
                     3: {
                         "name" : "boatBody",
                         "style" : {
-                            "left" : "140px",
-                            "top" : "100px",
-                            "width": "200px",
-                            "height": "80px"
+                            "left" : "112px",
+                            "top" : "80px",
+                            "width": "160px",
+                            "height": "64px"
                         }
                     }
                 },
@@ -248,7 +248,7 @@ var gamedata = {
                     0 : {
                         "name" : "boatBody",
                         "style" : {
-                            "left" : "150px",
+                            "left" : "110px",
                             "top" : "200px",
                             "width": "175px",
                             "height": "75px"
@@ -257,7 +257,7 @@ var gamedata = {
                     1 : {
                         "name" : "boatFlag",
                         "style" : {
-                            "left" : "218px",
+                            "left" : "188px",
                             "top" : "52px",
                             "width": "150px",
                             "height": "150px"
@@ -266,7 +266,7 @@ var gamedata = {
                     2: {
                         "name" : "boatLeft",
                         "style" : {
-                            "left" : "56px",
+                            "left" : "16px",
                             "top" : "200px",
                             "width": "95px",
                             "height": "75px"
@@ -275,7 +275,7 @@ var gamedata = {
                     3: {
                         "name" : "boatRight",
                         "style" : {
-                            "left" : "324px",
+                            "left" : "284px",
                             "top" : "200px",
                             "width": "95px",
                             "height": "75px"
@@ -296,7 +296,7 @@ var gamedata = {
                     0 : {
                         "name" : "circle",
                         "style" : {
-                            "left" : "200px",
+                            "left" : "180px",
                             "top" : "170px",
                             "width": "100px",
                             "height": "100px",
@@ -306,7 +306,7 @@ var gamedata = {
                     1 : {
                         "name" : "wood_log",
                         "style" : {
-                            "left" : "172px",
+                            "left" : "152px",
                             "top" : "100px",
                             "width": "150px",
                             "height": "350px",
@@ -316,7 +316,7 @@ var gamedata = {
                     2: {
                         "name" : "triangle",
                         "style" : {
-                            "left" : "120px",
+                            "left" : "100px",
                             "top" : "4px",
                             "width": "250px",
                             "height": "100px",
@@ -326,7 +326,7 @@ var gamedata = {
                     3: {
                         "name" : "roof",
                         "style" : {
-                            "left" : "100px",
+                            "left" : "80px",
                             "top" : "300px",
                             "width": "150px",
                             "height": "150px",
@@ -336,7 +336,7 @@ var gamedata = {
                     4: {
                         "name" : "roof",
                         "style" : {
-                            "left" : "245px",
+                            "left" : "225px",
                             "top" : "300px",
                             "width": "150px",
                             "height": "150px",
@@ -399,24 +399,24 @@ var gamedata = {
                         "style" : {
                             "left" : "20px",
                             "top" : "100px",
-                            "width": "250px",
-                            "height": "150px"
+                            "width": "230px",
+                            "height": "130px"
                         }
                     },
                     1 : {
                         "name" : "boatBody",
                         "style" : {
-                            "left" : "280px",
+                            "left" : "255px",
                             "top" : "130px",
-                            "width": "120px",
-                            "height": "120px"
+                            "width": "100px",
+                            "height": "100px"
                         }
                     },
                     2: {
                         "name" : "circle",
                         "style" : {
-                            "left" : "20px",
-                            "top" : "250px",
+                            "left" : "15px",
+                            "top" : "230px",
                             "width": "60px",
                             "height": "60px"
                         }
@@ -424,8 +424,8 @@ var gamedata = {
                     3: {
                         "name" : "circle",
                         "style" : {
-                            "left" : "200px",
-                            "top" : "250px",
+                            "left" : "95px",
+                            "top" : "230px",
                             "width": "60px",
                             "height": "60px"
                         }
@@ -433,8 +433,8 @@ var gamedata = {
                     4: {
                         "name" : "circle",
                         "style" : {
-                            "left" : "330px",
-                            "top" : "250px",
+                            "left" : "250px",
+                            "top" : "230px",
                             "width": "60px",
                             "height": "60px"
                         }
@@ -442,10 +442,10 @@ var gamedata = {
                     5: {
                         "name" : "truckHeadWindow",
                         "style" : {
-                            "left" : "335px",
+                            "left" : "300px",
                             "top" : "135px",
-                            "width": "60px",
-                            "height": "60px",
+                            "width": "50px",
+                            "height": "50px",
                             "z-Index": "2"
                         }
                     }
